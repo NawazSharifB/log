@@ -1,0 +1,243 @@
+<mat-card>
+    <h2 class="form-title">{{mode}} Info</h2>
+    <form [formGroup]="infoForm">
+        <div class="first-last-name-area"
+            fxLayout="row wrap"
+            fxLayoutGap="10px"
+            fxLayoutAlign="space-between start">
+
+            <div class="first-name-area"
+                fxFlex="1 1 calc(50% - 10px)">
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input 
+                        matInput
+                        formControlName="firstName">
+                    <mat-error *ngIf="firstName.errors?.required">Required</mat-error>
+                    <mat-error *ngIf="firstName.errors?.minlength">Minimum 3 Characters</mat-error>
+                    <mat-error *ngIf="firstName.errors?.maxlength">Maximum 15 Characters</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="last-name-area"
+                fxFlex="1 1 calc(50% - 10px)">
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input 
+                        matInput
+                        formControlName="lastName">
+                        <mat-error *ngIf="lastName.errors?.required">Required</mat-error>
+                        <mat-error *ngIf="lastName.errors?.minlength">Minimum 3 Characters</mat-error>
+                        <mat-error *ngIf="lastName.errors?.maxlength">Maximum 15 Characters</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="age-sex-area"
+            fxLayout="row wrap"
+            fxLayoutGap="10px"
+            fxLayoutAlign="space-between start">
+
+            <div class="age-area"
+                fxFlex="1 1 calc(50%-10px)">
+                <mat-form-field appearance="outline">
+                    <mat-label>Age</mat-label>
+                    <input 
+                        matInput
+                        type="number"
+                        formControlName="age">
+                    <mat-error *ngIf="age.errors?.required">Required</mat-error>
+                    <mat-error *ngIf="age.errors?.min">Minimum Age Can Be 7</mat-error>
+                    <mat-error *ngIf="age.errors?.max">Maximum Age Can Be 100</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="choose-sex-area"
+                fxFlex="1 1 calc(50%-10px)">
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Sex</mat-label>
+                    <input 
+                        matInput
+                        formControlName="sex">
+                </mat-form-field> -->
+                <span>Sex :</span>
+                <mat-radio-group formControlName="sex">
+                    <mat-radio-button value="Male">Male</mat-radio-button>
+                    <mat-radio-button value="Female">Female</mat-radio-button>
+                  </mat-radio-group>
+            </div>
+        </div>
+
+        <div class="occupation-institutation-area"
+            fxLayout="row wrap"
+            fxLayoutGap="10px"
+            fxLayoutAlign="space-between start">
+
+            <div class="occupation-area"
+                fxFlex="1 1 calc(50%-10px)">
+                <mat-form-field appearance="outline">
+                    <mat-label>Occupation</mat-label>
+                    <input 
+                        matInput
+                        formControlName="occupation">
+                    <mat-error *ngIf="occupation.errors?.required">Required</mat-error>
+                    <mat-error *ngIf="occupation.errors?.minlength">Minimum 3 Characters</mat-error>
+                    <mat-error *ngIf="occupation.errors?.maxlength">Maximum 15 Characters</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="institutation-area"
+                fxFlex="1 1 calc(50%-10px)">
+                <mat-form-field appearance="outline">
+                    <mat-label>Institution</mat-label>
+                    <input 
+                        matInput
+                        formControlName="institutation">
+                    <mat-error *ngIf="institutation.errors?.required">Required</mat-error>
+                    <mat-error *ngIf="institutation.errors?.minlength">Minimum 3 Characters</mat-error>
+                    <mat-error *ngIf="institutation.errors?.maxlength">Maximum 15 Characters</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <h2>Contact Information</h2>
+        
+        <div class="contact-area"
+            formGroupName="contactInfo"
+            fxLayout="row wrap"
+            fxLayoutGap="10px"
+            fxLayoutAlign="space-between start">
+
+            <div class="phone-area"
+                fxFlex="1 1 calc(50%-10px)">
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone Number</mat-label>
+                    <input 
+                        matInput
+                        formControlName="phone">
+                    <mat-error *ngIf="phone.errors?.required">Required</mat-error>
+                    <mat-error *ngIf="phone.errors?.minlength">Minimum 11 Digits</mat-error>
+                    <mat-error *ngIf="phone.errors?.maxlength">Maximum 11 Digits</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="email-area"
+                fxFlex="1 1 calc(50%-10px)">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input 
+                        matInput
+                        formControlName="email">
+                    <mat-error *ngIf="email.errors?.required">Required</mat-error>
+                    <mat-error *ngIf="email.errors?.email">Invalid Email</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <h2>Address Information</h2>
+        
+        <div formGroupName="address">
+
+            <div class="road-holding-area"
+                fxLayout="row wrap"
+                fxLayoutGap="10px"
+                fxLayoutAlign="space-between start">
+    
+                <div class="road-area"
+                    fxFlex="1 1 calc(50%-10px)">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Road No/ Village</mat-label>
+                        <input 
+                            matInput
+                            formControlName="road">
+                        <mat-error *ngIf="road.errors?.required">Required</mat-error>
+                        <mat-error *ngIf="road.errors?.minlength">Minimum 2 Characters</mat-error>
+                        <mat-error *ngIf="road.errors?.maxlength">Maximum 15 Characters</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="holding-area"
+                    fxFlex="1 1 calc(50%-10px)">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Holding No</mat-label>
+                        <input 
+                            matInput
+                            formControlName="holding">
+                        <mat-error *ngIf="holding.errors?.required">Required</mat-error>
+                        <mat-error *ngIf="holding.errors?.minlength">Minimum 3 Characters</mat-error>
+                        <mat-error *ngIf="holding.errors?.maxlength">Maximum 10 Characters</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="post-postCode-area"
+                fxLayout="row wrap"
+                fxLayoutGap="10px"
+                fxLayoutAlign="space-between start">
+    
+                <div class="post-area"
+                    fxFlex="1 1 calc(50%-10px)">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Post Office Name</mat-label>
+                        <input 
+                            matInput
+                            formControlName="post">
+                        <mat-error *ngIf="post.errors?.required">Required</mat-error>
+                        <mat-error *ngIf="post.errors?.minlength">Minimum 2 Characters</mat-error>
+                        <mat-error *ngIf="post.errors?.maxlength">Maximum 15 Characters</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="postCode-area"
+                    fxFlex="1 1 calc(50%-10px)">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Post Number</mat-label>
+                        <input 
+                            matInput
+                            type="number"
+                            formControlName="postCode">
+                        <mat-error *ngIf="postCode.errors?.required">Required</mat-error>
+                        <mat-error *ngIf="postCode.errors?.min">Invalid Post Code</mat-error>
+                        <mat-error *ngIf="postCode.errors?.max">Invalid Post Code</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            
+            <div class="district-city-area"
+                fxLayout="row wrap"
+                fxLayoutGap="10px"
+                fxLayoutAlign="space-between start">
+    
+                <div class="district-area"
+                    fxFlex="1 1 calc(50%-10px)">
+                    <mat-form-field appearance="outline">
+                        <mat-label>District Name</mat-label>
+                        <input 
+                            matInput
+                            formControlName="district">
+                        <mat-error *ngIf="district.errors?.required">Required</mat-error>
+                        <mat-error *ngIf="district.errors?.minlength">Minimum 2 Characters</mat-error>
+                        <mat-error *ngIf="district.errors?.maxlength">Maximum 15 Characters</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="city-area"
+                    fxFlex="1 1 calc(50%-10px)">
+                    <mat-form-field appearance="outline">
+                        <mat-label>City Name</mat-label>
+                        <input 
+                            matInput
+                            formControlName="city">
+                        <mat-error *ngIf="city.errors?.required">Required</mat-error>
+                        <mat-error *ngIf="city.errors?.minlength">Minimum 2 Characters</mat-error>
+                        <mat-error *ngIf="city.errors?.maxlength">Maximum 15 Characters</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="action-area"
+            fxLayout="row">
+            <span fxFlex="1 1 auto"></span>
+            <div class="button-area">
+                <button class="action-button"
+                    mat-raised-button
+                    (click)="submit()">
+                    {{mode}}
+                </button>
+            </div>
+        </div>
+    </form>
+</mat-card>

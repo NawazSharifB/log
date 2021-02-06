@@ -1,0 +1,49 @@
+
+<div class="search-area">
+  <mat-label>Search Log</mat-label>
+  <input 
+    matInput
+    placeholder="search information here"
+    [formControl]="searchLog">
+</div>
+
+<div class="mat-elevation-z8" *ngIf="logSize; else noInfoAvailable">
+  <table mat-table class="full-width-table" matSort aria-label="Elements" [dataSource]="dataTable">
+
+    <ng-container matColumnDef="fullName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</th>
+      <td mat-cell *matCellDef="let row">{{row.fullName}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email Address</th>
+      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone Number</th>
+      <td mat-cell *matCellDef="let row">{{row.phone}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-stroked-button (click)="goEditingInfo(row.uid, $event)">Edit Info</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="viewFullInfo(row.uid)" ></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="logSize"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[10, 20, 50]">
+  </mat-paginator>
+</div>
+
+<ng-template #noInfoAvailable>
+  <p class="no-info-available">No Information Available</p>
+</ng-template>

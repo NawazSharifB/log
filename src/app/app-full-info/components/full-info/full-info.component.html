@@ -1,0 +1,188 @@
+<mat-card *ngIf="userInfo">
+    <div class="info-area"
+        fxLayout="row"
+        fxLayoutAlign="space-between start">
+        <p class="title" fxFlex="1 1 150px">
+            Full Name
+        </p>
+        <p class="color" fxFlex="1 1 10px">:</p>
+        <p class="data" fxFlex="1 1 auto">
+            {{userInfo.firstName}} {{userInfo.lastName}}
+        </p>
+    </div>
+    <div class="info-area"
+        fxLayout="row"
+        fxLayoutAlign="space-between start">
+        <p class="title" fxFlex="1 1 150px">
+            Age
+        </p>
+        <p class="color" fxFlex="1 1 10px">:</p>
+        <p class="data" fxFlex="1 1 auto">
+            {{userInfo.age}}
+        </p>
+    </div>
+    <div class="info-area"
+        fxLayout="row"
+        fxLayoutAlign="space-between start">
+        <p class="title" fxFlex="1 1 150px">
+            Sex
+        </p>
+        <p class="color" fxFlex="1 1 10px">:</p>
+        <p class="data" fxFlex="1 1 auto">
+            {{userInfo.sex}}
+        </p>
+    </div>
+    <div class="info-area"
+        fxLayout="row"
+        fxLayoutAlign="space-between start">
+        <p class="title" fxFlex="1 1 150px">
+            Occupation
+        </p>
+        <p class="color" fxFlex="1 1 10px">:</p>
+        <p class="data" fxFlex="1 1 auto">
+            {{userInfo.occupation}}
+        </p>
+    </div>
+    <div class="info-area"
+        fxLayout="row"
+        fxLayoutAlign="space-between start">
+        <p class="title" fxFlex="1 1 150px">
+            Institution
+        </p>
+        <p class="color" fxFlex="1 1 10px">:</p>
+        <p class="data" fxFlex="1 1 auto">
+            {{userInfo.institutation}}
+        </p>
+    </div>
+
+    <p class="contact-info-title">Contact Info</p>
+
+    <div class="info-area"
+        fxLayout="row"
+        fxLayoutAlign="space-between start">
+        <p class="title" fxFlex="1 1 150px">
+           Email
+        </p>
+        <p class="color" fxFlex="1 1 10px">:</p>
+        <p class="data" fxFlex="1 1 auto">
+            {{userInfo.contactInfo.email}}
+        </p>
+    </div>
+    <div class="info-area"
+        fxLayout="row"
+        fxLayoutAlign="space-between start">
+        <p class="title" fxFlex="1 1 150px">
+            Phone
+        </p>
+        <p class="color" fxFlex="1 1 10px">:</p>
+        <p class="data" fxFlex="1 1 auto">
+            {{userInfo.contactInfo.phone}}
+        </p>
+    </div>
+
+    <p class="address-info-title">Address Info</p>
+
+    <div fxLayout="row wrap">
+        <div class="info-area"
+            fxFlex="1 1 50%"
+            fxFlex.lt-sm="1 1 100%"
+            fxLayout="row"
+            fxLayoutAlign="space-between start">
+            <p class="title" fxFlex="1 1 150px">
+                Road
+            </p>
+            <p class="color" fxFlex="1 1 10px">:</p>
+            <p class="data" fxFlex="1 1 auto">
+                {{userInfo.address.road}}
+            </p>
+        </div>
+        <div class="info-area"
+            fxFlex="1 1 50%"
+            fxFlex.lt-sm="1 1 100%"
+            fxLayout="row"
+            fxLayoutAlign="space-between start">
+            <p class="title" fxFlex="1 1 150px">
+                Holding
+            </p>
+            <p class="color" fxFlex="1 1 10px">:</p>
+            <p class="data" fxFlex="1 1 auto">
+                {{userInfo.address.holding}}
+            </p>
+        </div>
+    </div>
+    <div fxLayout="row wrap">
+        <div class="info-area"
+            fxFlex="1 1 50%"
+            fxFlex.lt-sm="1 1 100%"
+            fxLayout="row"
+            fxLayoutAlign="space-between start">
+            <p class="title" fxFlex="1 1 150px">
+                Post
+            </p>
+            <p class="color" fxFlex="1 1 10px">:</p>
+            <p class="data" fxFlex="1 1 auto">
+                {{userInfo.address.post}}
+            </p>
+        </div>
+        <div class="info-area"
+            fxFlex="1 1 50%"
+            fxFlex.lt-sm="1 1 100%"
+            fxLayout="row"
+            fxLayoutAlign="space-between start">
+            <p class="title" fxFlex="1 1 150px">
+                Post Code
+            </p>
+            <p class="color" fxFlex="1 1 10px">:</p>
+            <p class="data" fxFlex="1 1 auto">
+                {{userInfo.address.postCode}}
+            </p>
+        </div>
+    </div>
+    <div fxLayout="row wrap">
+        <div class="info-area"
+            fxFlex="1 1 50%"
+            fxFlex.lt-sm="1 1 100%"
+            fxLayout="row"
+            fxLayoutAlign="space-between start">
+            <p class="title" fxFlex="1 1 150px">
+                City
+            </p>
+            <p class="color" fxFlex="1 1 10px">:</p>
+            <p class="data" fxFlex="1 1 auto">
+                {{userInfo.address.city}}
+            </p>
+        </div>
+        <div class="info-area"
+            fxFlex="1 1 50%"
+            fxFlex.lt-sm="1 1 100%"
+            fxLayout="row"
+            fxLayoutAlign="space-between start">
+            <p class="title" fxFlex="1 1 150px">
+                District
+            </p>
+            <p class="color" fxFlex="1 1 10px">:</p>
+            <p class="data" fxFlex="1 1 auto">
+                {{userInfo.address.district}}
+            </p>
+        </div>
+    </div>
+
+    <div class="action-area"
+        fxLayout="row">
+        <button class="go-edit-button"
+            mat-stroked-button
+            [routerLink]="['/_/edit-info', userInfo.uid]">
+            Edit Information
+        </button>
+
+        <span fxFlex="1 1 auto"></span>
+
+        <button class="go-log-button"
+            mat-stroked-button
+            [routerLink]="['/log']">
+            Okay
+        </button>
+
+    </div>
+
+</mat-card>
